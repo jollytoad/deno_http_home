@@ -1,0 +1,26 @@
+{
+  "tasks": {
+    "gen": "./scripts/gen.ts",
+    "start": "./app/dev.ts",
+    "start:prod": "./app/main.ts",
+    "check": "deno check **/*.ts",
+    "ok": "deno fmt && deno lint && deno task check",
+    "lock": "rm -f deno.lock && deno check --reload **/*.ts",
+    "outdated": "deno run --allow-read=. --allow-net=jsr.io,registry.npmjs.org jsr:@check/deps"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@http/jsx-stream",
+    "noUncheckedIndexedAccess": true,
+    "verbatimModuleSyntax": true
+  },
+  "imports": {
+    "@http/discovery": "jsr:@http/discovery@^0.15.0",
+    "@http/generate": "jsr:@http/generate@^0.15.0",
+    "@http/host-deno-local": "jsr:@http/host-deno-local@^0.15.0",
+    "@http/jsx-stream": "jsr:@http/jsx-stream@^0.2.2",
+    "@http/response": "jsr:@http/response@^0.15.0",
+    "@http/route": "jsr:@http/route@^0.15.0",
+    "@http/route-deno": "jsr:@http/route-deno@^0.15.0"
+  }
+}
